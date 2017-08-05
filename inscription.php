@@ -1,6 +1,7 @@
 <?php session_start();
 //Connection a la basse de données
 include 'node_modules/PDO/connect.php';
+// Fichier fonction.
 include 'node_modules/PDO/fonctions.php';
 $titre = 'Inscription';
 
