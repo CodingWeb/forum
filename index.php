@@ -3,7 +3,7 @@
 include 'node_modules/PDO/connect.php';
 // Fichier fonction.
 include 'node_modules/PDO/fonctions.php';
-$titre = 'connect';
+$titre = 'L\'accueil du forum';
 
 ?><!--Le header-->
 <?php include 'node_modules/template/Accueil/header.php'; ?>

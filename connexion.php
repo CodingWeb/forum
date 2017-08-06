@@ -5,7 +5,28 @@ include 'node_modules/PDO/connect.php';
 include 'node_modules/PDO/fonctions.php';
 $titre = 'Connexion';
 
+if (!empty($_POST)) {
+    extract($_POST);
+    $valid = (empty($pseudo) || empty($pass)) ? false : true;
 
+    $erreurpseudo = (empty($pseudo)) ? 'Indiquez votre pseudo' : '';
+    $erreurpass = (empty($pass)) ? 'Indiquez votre mot de passe' : '';
+    if ($valid)
+    {
+        if (!check_id($pseudo,$pass))
+        {
+            $valid = false;
+            $erreurid = 'Mauvais identifiants';
+        }
+        if ($valid)
+        {
+            $_SESSION['membre'] = $pseudo;
+
+            header('Location: ../../../forum/index.php');
+        }
+    }
+}
+if (isset($pseudo)) echo $pseudo;
 
 ?><!--Le header-->
 <?php include 'node_modules/template/connect/header.php'; ?>
