@@ -4,6 +4,7 @@ include 'node_modules/PDO/connect.php';
 // Fichier fonction
 include 'node_modules/PDO/fonctions.php';
 $titre = 'Inscription';
+$domaine = 'dev-apprendreensemble.com';
 
 if (!empty($_POST)) {
     extract($_POST);
@@ -33,14 +34,14 @@ if (!empty($_POST)) {
         if ($valid)
         {
             $to      = $emails;
-            $subject = 'Inscription';
+            $subject = 'Inscription sur '.$domaine.'';
             $message = '<h4>Bonjour ! '.ucwords($pseudo).' </h4>
             <p>Vous ètes maintenant membre du forum</p>
             <p>Voici vos identifiants :<br>
             Login : <b>'.$pseudo.'</b>
             Mot de passe : <b>'.$pass.'</b></p>
-            <p>A bientôt sur le forum.</p>';
-            $headers = 'From:coding-web@hotmail.com'."\r\n";
+            <p>A bientôt sur le <a href="http://dev-apprendreensemble.com/forum/">forum</a>.</p>';
+            $headers = 'From:dev.coding.web@gmail.com'."\r\n";
             $headers.='MIME-version: 1.0'."\r\n";
             $headers.='Content-type: text/html; charset=utf-8'."\r\n";
 

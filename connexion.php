@@ -22,7 +22,7 @@ if (!empty($_POST)) {
         {
             $_SESSION['membre'] = $pseudo;
 
-            header('Location: ../../../forum/index.php');
+            header('Location: index.php');
         }
     }
 }
