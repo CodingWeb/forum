@@ -5,7 +5,11 @@ include 'node_modules/PDO/connect.php';
 include 'node_modules/PDO/fonctions.php';
 $titre = 'Inscription';
 $domaine = 'dev-apprendreensemble.com';
-
+// Une fois connecter rien a faire sur la page inscription
+if (check_session())
+{
+    header('Location: index.php');
+}
 if (!empty($_POST)) {
     extract($_POST);
     $valid = (empty($pseudo) || empty($emails) || !filter_var($emails, FILTER_VALIDATE_EMAIL) || empty($pass)) ?

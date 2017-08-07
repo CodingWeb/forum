@@ -4,7 +4,11 @@ include 'node_modules/PDO/connect.php';
 // Fichier fonction.
 include 'node_modules/PDO/fonctions.php';
 $titre = 'Connexion';
-
+// Une fois connecter rien a faire sur la page connexion
+if (check_session())
+{
+    header('Location: index.php');
+}
 if (!empty($_POST)) {
     extract($_POST);
     $valid = (empty($pseudo) || empty($pass)) ? false : true;
