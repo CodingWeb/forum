@@ -21,12 +21,11 @@ if (!empty($_POST)) {
         if ($valid)
         {
             $_SESSION['membre'] = $pseudo;
-
             header('Location: index.php');
         }
     }
 }
-if (isset($pseudo)) echo $pseudo;
+
 
 ?><!--Le header-->
 <?php include 'node_modules/template/connect/header.php'; ?>
