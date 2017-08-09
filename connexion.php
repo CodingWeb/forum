@@ -26,9 +26,14 @@ if (!empty($_POST)) {
         {
             $_SESSION['membre'] = $pseudo;
             header('Location: index.php');
+            $_SESSION['flash'] = array(
+                'type' => 'success',
+                'message' => 'Content de vous revoir '
+            );
         }
     }
 }
+
 
 
 ?><!--Le header-->
